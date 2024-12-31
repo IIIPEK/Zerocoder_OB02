@@ -90,30 +90,3 @@ class Admin(User):
     def get_privileges(self):
         return self.__privileges
 
-def print_delimiter():
-    print('=' * 50)
-
-# Пример использования
-admin = Admin("Admin", "admin@example.com", "securepassword")
-admin.get_info()
-
-print_delimiter()
-
-users = admin.add_user(
-    [
-        User("John Doe", "john.doe@example.com", "password123"),
-        User("Jane Doe", "jane.doe@example.com", "password123"),
-        User("Bob Doe", "bob.doe@example.com", "password123"),
-    ]
-)
-for user in users:
-    user.get_info()
-    print_delimiter()
-
-print_delimiter()
-admin.delete_user("John Doe",users)
-print_delimiter()
-
-for user in users:
-    user.get_info()
-    print_delimiter()
